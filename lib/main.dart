@@ -58,8 +58,7 @@ class titleBar extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40 / 2),
             image: DecorationImage(
-              image: NetworkImage(
-                  "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2022/06/30/692203986.jpg"),
+              image: AssetImage("assets/photoprofile.jpg"),
             ),
           ),
         ),
@@ -67,6 +66,9 @@ class titleBar extends StatelessWidget {
     );
   }
 }
+
+
+// 
 
 class textField extends StatelessWidget {
   const textField({

@@ -241,7 +241,7 @@ class _BerbagiLinkState extends State<berbagiLink>
             // tabbar end
 
             TabBar(
-              padding: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: 20, bottom: 20),
               // isScrollable: true,
               unselectedLabelColor: Colors.black,
               labelColor: Colors.white,
@@ -266,7 +266,7 @@ class _BerbagiLinkState extends State<berbagiLink>
             Expanded(
               child: TabBarView(
                 children: [
-                  Container(child: Text('people')),
+                  Container(child: Center(child: Text('Dashboard'))),
                   Column(
                     children: [
                       Container(
@@ -310,20 +310,19 @@ class _BerbagiLinkState extends State<berbagiLink>
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             itemKategori(
-                              name: "Tracking Pixels",
-                              icon: ColorSelect.disableColor,
-                              tap: () {
-                                print("button 5 clicked");
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return trackingPixels();
-                                    },
-                                  ),
-                                );
-                              }
-                            ),
+                                name: "Tracking Pixels",
+                                icon: ColorSelect.disableColor,
+                                tap: () {
+                                  print("button 5 clicked");
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return trackingPixels();
+                                      },
+                                    ),
+                                  );
+                                }),
                             itemKategori(
                               name: "Email Database",
                               icon: ColorSelect.disableColor,
