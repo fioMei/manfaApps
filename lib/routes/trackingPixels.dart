@@ -62,7 +62,7 @@ class trackingPixels extends StatelessWidget {
                           borderRadius: BorderRadius.circular(36))),
                   padding: MaterialStateProperty.all(EdgeInsets.all(16)),
                   backgroundColor:
-                      MaterialStateProperty.all(ColorSelect.buttonColor)),
+                      MaterialStateProperty.all(ColorSelect.buttonColorText)),
               onPressed: () {},
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

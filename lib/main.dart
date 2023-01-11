@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manfa_apps/berbagiLink.dart';
 import 'package:manfa_apps/colors/colors.dart';
-import 'package:manfa_apps/routes/emailDatabase.dart';
-import 'package:manfa_apps/routes/trackingPixels.dart';
 
 void main() {
   runApp(const ManfaApps());
@@ -67,8 +65,7 @@ class titleBar extends StatelessWidget {
   }
 }
 
-
-// 
+//
 
 class textField extends StatelessWidget {
   const textField({
@@ -92,4 +89,16 @@ class textField extends StatelessWidget {
             hintText: text,
             hintStyle: TextStyle(color: Colors.grey.shade400)));
   }
+}
+
+ScaffoldFeatureController<SnackBar, SnackBarClosedReason> snackBar1(
+    BuildContext context) {
+  return ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(
+        "none",
+        style: TextStyle(color: ColorSelect.buttonColorText),
+      ),
+    ),
+  );
 }

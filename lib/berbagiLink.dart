@@ -1,9 +1,12 @@
+import 'package:manfa_apps/main.dart';
 import 'package:flutter/material.dart';
 import 'package:manfa_apps/colors/colors.dart';
-import 'package:manfa_apps/main.dart';
+import 'package:manfa_apps/routes/trackingPixels.dart';
 import 'package:manfa_apps/routes/emailDatabase.dart';
 import 'package:manfa_apps/routes/tagihan.dart';
-import 'package:manfa_apps/routes/trackingPixels.dart';
+import 'package:manfa_apps/routes/bagiTo.dart';
+
+import 'routes/tes.dart';
 
 void main() => runApp(berbagiLink());
 
@@ -44,7 +47,7 @@ class _BerbagiLinkState extends State<berbagiLink>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+        padding: EdgeInsets.only(left: 20, right: 20, top: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -83,40 +86,44 @@ class _BerbagiLinkState extends State<berbagiLink>
             ),
             // Title end
 
+            SizedBox(
+              height: 20,
+            ),
+
             // button
             Container(
               padding: EdgeInsets.all(6),
-              margin: EdgeInsets.only(top: 20, bottom: 10),
               decoration: BoxDecoration(
-                  // color: Colors.amber,
                   borderRadius: BorderRadius.circular(18),
-                  // color: ColorSelect.primaryColor,
-                  color: ColorSelect.primaryColor),
+                  color: ColorSelect.buttonColor),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
+                      SizedBox(width: 4),
                       Icon(
                         Icons.help,
                         size: 26,
-                        color: Colors.white,
+                        color: ColorSelect.buttonColorText,
                       ),
                       SizedBox(
                         width: 10,
                       ),
                       Text('Pelajari bagaimana Berbagi.link bekerja',
                           style: TextStyle(
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.w500,
                               fontSize: 12,
-                              color: Colors.white)),
+                              color: ColorSelect.buttonColorText)),
                     ],
                   ),
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.arrow_forward_ios),
-                    iconSize: 16,
-                    color: Colors.white,
+                    onPressed: () {
+                      snackBar1(context);
+                    },
+                    icon: Icon(Icons.chevron_right),
+                    iconSize: 28,
+                    color: ColorSelect.buttonColorText,
                   ),
                 ],
               ),
@@ -125,7 +132,7 @@ class _BerbagiLinkState extends State<berbagiLink>
 
             // line
             Container(
-              margin: EdgeInsets.only(top: 10, bottom: 16),
+              margin: EdgeInsets.only(top: 20, bottom: 16),
               height: 2,
               color: ColorSelect.disableColor,
             ),
@@ -146,33 +153,33 @@ class _BerbagiLinkState extends State<berbagiLink>
               margin: EdgeInsets.only(top: 20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(32),
-                  color: ColorSelect.buttonColor),
+                  color: ColorSelect.primaryColor),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     padding: EdgeInsets.only(left: 20),
                     child: Text(
-                      "https://berbagi.link/fio",
+                      "berbagi.link/fio",
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15,
-                          color: Colors.white),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                          color: ColorSelect.primaryColorText),
                     ),
                   ),
                   Row(
                     children: [
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.share_sharp),
-                        iconSize: 18,
-                        color: Colors.white,
+                        icon: Icon(Icons.file_copy),
+                        iconSize: 24,
+                        color: ColorSelect.primaryColorText,
                       ),
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.star_outlined),
-                        iconSize: 22,
-                        color: Colors.white,
+                        icon: Icon(Icons.qr_code_outlined),
+                        iconSize: 26,
+                        color: ColorSelect.primaryColorText,
                       ),
                     ],
                   ),
@@ -181,73 +188,15 @@ class _BerbagiLinkState extends State<berbagiLink>
             ),
             // Link end
 
-            // tabbar ceritanya tapi ga bisa diteken :)
-            // Container(
-            //   margin: EdgeInsets.only(top: 20, bottom: 20),
-            //   // padding: EdgeInsets.all(16),
-            //   decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.circular(32),
-            //       border: Border.all(color: Colors.black)
-            //       // color: Colors.black,
-            //       ),
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       SizedBox(),
-            //       Container(
-            //         padding: EdgeInsets.all(16),
-            //         margin: EdgeInsets.only(top: 0, bottom: 0),
-            //         decoration: BoxDecoration(
-            //           borderRadius: BorderRadius.circular(32),
-            //           // color: ColorSelect.secondaryColor,
-            //         ),
-            //         child: Row(
-            //           children: [
-            //             Container(
-            //               child: Text(
-            //                 "Dashboard",
-            //                 style: TextStyle(
-            //                   fontWeight: FontWeight.w500,
-            //                   fontSize: 16,
-            //                 ),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //       Container(
-            //         padding: EdgeInsets.fromLTRB(26, 18, 26, 18),
-            //         decoration: BoxDecoration(
-            //           borderRadius: BorderRadius.circular(32),
-            //           color: Colors.black,
-            //         ),
-            //         child: Row(
-            //           children: [
-            //             Container(
-            //               child: Text(
-            //                 "Menu Berbagi.link",
-            //                 style: TextStyle(
-            //                     fontWeight: FontWeight.w100,
-            //                     fontSize: 16,
-            //                     color: Colors.white),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // tabbar end
-
             TabBar(
               padding: EdgeInsets.only(top: 20, bottom: 20),
               // isScrollable: true,
-              unselectedLabelColor: Colors.black,
+              unselectedLabelColor: ColorSelect.disableColor,
+              unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
               labelColor: Colors.white,
-              indicatorWeight: 2,
+              // indicatorWeight: 0,
               indicator: BoxDecoration(
-                color: Colors.black,
+                color: ColorSelect.buttonColorText,
                 borderRadius: BorderRadius.circular(64),
               ),
               overlayColor:
@@ -257,7 +206,7 @@ class _BerbagiLinkState extends State<berbagiLink>
                   text: 'Dashboard',
                 ),
                 Tab(
-                  text: 'Berbagi.link',
+                  text: 'Menu Berbagi.link',
                 )
               ],
               controller: _tabController,
@@ -268,6 +217,7 @@ class _BerbagiLinkState extends State<berbagiLink>
                 children: [
                   Container(child: Center(child: Text('Dashboard'))),
                   Column(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
                         child: Row(
@@ -275,28 +225,50 @@ class _BerbagiLinkState extends State<berbagiLink>
                           children: [
                             itemKategori(
                               name: "Ubah Tampilan",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.brush,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: ((context) => tes()),
+                                  ),
+                                );
                                 print("button 1 clicked");
                               },
                             ),
                             itemKategori(
                               name: "Analisis Link",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.insert_chart,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("button 2 clicked");
                               },
                             ),
                             itemKategori(
                               name: "Pratinjau",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.remove_red_eye_outlined,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("button 3 clicked");
                               },
                             ),
                             itemKategori(
                               name: "Tema",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.palette,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("button 4 clicked");
                               },
@@ -311,7 +283,11 @@ class _BerbagiLinkState extends State<berbagiLink>
                           children: [
                             itemKategori(
                                 name: "Tracking Pixels",
-                                icon: ColorSelect.disableColor,
+                                icon: Icon(
+                                  Icons.manage_search,
+                                  color: ColorSelect.secondaryColorText,
+                                  size: 34,
+                                ),
                                 tap: () {
                                   print("button 5 clicked");
                                   Navigator.push(
@@ -325,7 +301,11 @@ class _BerbagiLinkState extends State<berbagiLink>
                                 }),
                             itemKategori(
                               name: "Email Database",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.quick_contacts_mail,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("button 6 clicked");
                                 Navigator.push(
@@ -340,7 +320,11 @@ class _BerbagiLinkState extends State<berbagiLink>
                             ),
                             itemKategori(
                               name: "Tagihan",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.feed,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("button 7 clicked");
                                 Navigator.push(
@@ -353,12 +337,47 @@ class _BerbagiLinkState extends State<berbagiLink>
                                 );
                               },
                             ),
-                            itemKategori(
-                              name: "Bagi.to",
-                              icon: ColorSelect.disableColor,
-                              tap: () {
-                                print("button 8 clicked");
-                              },
+                            Column(
+                              children: [
+                                InkWell(
+                                  borderRadius: BorderRadius.circular(12),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) {
+                                          return bagiTo();
+                                        },
+                                      ),
+                                    );
+                                  },
+                                  child: Ink(
+                                    width: 70,
+                                    height: 70,
+                                    decoration: BoxDecoration(
+                                      color: ColorSelect.secondaryColor,
+                                      borderRadius: BorderRadius.circular(12),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/berbagiLink.png"),
+                                          fit: BoxFit.cover),
+                                    ),
+                                    // child: Image(
+                                    //   image:
+                                    //       AssetImage("assets/berbagiLink.png"),
+                                    //   fit: BoxFit.cover,
+                                    // ),
+                                  ),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  "Bagi.to",
+                                  style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w500),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
                             ),
                           ],
                         ),
@@ -371,28 +390,44 @@ class _BerbagiLinkState extends State<berbagiLink>
                           children: [
                             itemKategori(
                               name: "Manajemen\nUser",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.settings_accessibility,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("button 9 clicked");
                               },
                             ),
                             itemKategori(
                               name: "Event Online",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.newspaper,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("button 10 clicked");
                               },
                             ),
                             itemKategori(
                               name: "Profile",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.person,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("button 11 clicked");
                               },
                             ),
                             itemKategori(
                               name: "Integrasi Pihak\nketiga",
-                              icon: ColorSelect.disableColor,
+                              icon: Icon(
+                                Icons.groups,
+                                color: ColorSelect.secondaryColorText,
+                                size: 34,
+                              ),
                               tap: () {
                                 print("butto12 cliked");
                               },
@@ -422,7 +457,7 @@ class itemKategori extends StatelessWidget {
   }) : super(key: key);
 
   final String name;
-  final Color icon;
+  final Icon icon;
   final Function tap;
 
   @override
@@ -438,14 +473,15 @@ class itemKategori extends StatelessWidget {
             width: 70,
             height: 70,
             decoration: BoxDecoration(
-                color: ColorSelect.disableColor,
+                color: ColorSelect.secondaryColor,
                 borderRadius: BorderRadius.circular(12)),
+            child: icon,
           ),
         ),
         SizedBox(height: 5),
         Text(
           name,
-          style: TextStyle(fontSize: 10),
+          style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),
           textAlign: TextAlign.center,
         ),
       ],
