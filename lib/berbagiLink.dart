@@ -353,22 +353,17 @@ class _BerbagiLinkState extends State<berbagiLink>
                                     );
                                   },
                                   child: Ink(
-                                    width: 70,
-                                    height: 70,
-                                    decoration: BoxDecoration(
-                                      color: ColorSelect.secondaryColor,
-                                      borderRadius: BorderRadius.circular(12),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              "assets/berbagiLink.png"),
-                                          fit: BoxFit.cover),
-                                    ),
-                                    // child: Image(
-                                    //   image:
-                                    //       AssetImage("assets/berbagiLink.png"),
-                                    //   fit: BoxFit.cover,
-                                    // ),
-                                  ),
+                                      width: 70,
+                                      height: 70,
+                                      decoration: BoxDecoration(
+                                        color: ColorSelect.secondaryColor,
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Container(
+                                        padding: EdgeInsets.all(16),
+                                        child: Image.asset(
+                                            "assets/berbagiLink.png"),
+                                      )),
                                 ),
                                 SizedBox(height: 5),
                                 Text(
