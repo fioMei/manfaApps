@@ -1,9 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:manfa_apps/colors/colors.dart';
-import 'package:manfa_apps/main.dart';
-import 'dart:math' as math;
+import 'package:manfa_apps/code/colors.dart';
+import 'package:manfa_apps/code/expansinoSaveBtn.dart';
+import 'package:manfa_apps/code/expansionBtn.dart';
+import 'package:manfa_apps/code/textField.dart';
+import 'package:manfa_apps/code/titleBar.dart';
+import 'package:manfa_apps/code/titleText.dart';
 
 void main() {
   runApp(bagiTo());
@@ -19,132 +22,198 @@ class bagiTo extends StatefulWidget {
 class _bagiToState extends State<bagiTo> {
   @override
   Widget build(BuildContext context) {
+    bool isChecked = false;
+
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return Colors.blue;
+      }
+      return Colors.black;
+    }
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        padding: EdgeInsets.only(left: 20, right: 20, top: 50),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Title start
-            titleBar(titleText: "Bagi.to"),
-            // Title end
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.only(left: 20, right: 20, top: 50),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Title start
+              titleBar(titleText: "Bagi.to"),
+              // Title end
 
-            //button
-            Container(
-              padding: EdgeInsets.all(6),
-              margin: EdgeInsets.only(top: 20, bottom: 10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18),
-                  color: ColorSelect.buttonColor),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
+              //button
+              // Expansion Button
+              expansionBtn(
+                  "Buat Link Baru",
+                  Icons.add_link,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.add_link,
-                        semanticLabel: "aaa",
-                        size: 26,
-                        color: ColorSelect.buttonColorText,
+                      titleText("Judul"),
+                      textField("Masukkan Judul Link (contoh: Google Maps)"),
+                      titleText("Link Asli"),
+                      textField("Masukkan Link yang ingin disingkat"),
+                      titleText("Generate Link (otomatis)"),
+                      Container(
+                        padding: EdgeInsets.all(4),
+                        margin: EdgeInsets.only(bottom: 12),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(18),
+                            color: ColorSelect.primaryColor),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "bagi.to/Judul",
+                                style: TextStyle(
+                                    fontStyle: FontStyle.italic,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: ColorSelect.primaryColorText),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.file_copy),
+                                  color: ColorSelect.primaryColorText,
+                                ),
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.share),
+                                  color: ColorSelect.primaryColorText,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text('Buat Link Baru',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: ColorSelect.buttonColorText)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          expansionSaveBtn("Batal", false),
+                          expansionSaveBtn("Simpan", true),
+                        ],
+                      )
                     ],
-                  ),
-                  Transform.rotate(
-                    angle: 90 * pi / 180,
-                    child: IconButton(
+                  )),
+              // Expansion Button End
+
+              // Expansion Button
+              expansionBtn(
+                "Daftar Link Bagi.to",
+                Icons.list,
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Pilih Semua"),
+                        Text(
+                          "Hapus Link",
+                          style: TextStyle(color: ColorSelect.disableColor),
+                        ),
+                      ],
+                    ),
+                    Checkbox(
+                      checkColor: Colors.amber,
+                      fillColor: MaterialStateProperty.resolveWith(getColor),
+                      value: isChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isChecked = value!;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              // Expansion Button End
+
+              Container(
+                padding: EdgeInsets.all(6),
+                margin: EdgeInsets.only(top: 20, bottom: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: ColorSelect.buttonColor),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.add_rounded,
+                          size: 26,
+                          color: ColorSelect.buttonColorText,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text('Tutorial memakai fitur Bagi.to',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: ColorSelect.buttonColorText)),
+                      ],
+                    ),
+                    IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.chevron_right),
                       iconSize: 28,
                       color: ColorSelect.buttonColorText,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
 
-            Container(
-              padding: EdgeInsets.all(6),
-              margin: EdgeInsets.only(top: 20, bottom: 10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18),
-                  color: ColorSelect.buttonColor),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.add_rounded,
-                        semanticLabel: "aaa",
-                        size: 26,
-                        color: ColorSelect.buttonColorText,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text('Tutorial memakai fitur Bagi.to',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: ColorSelect.buttonColorText)),
-                    ],
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.chevron_right),
-                    iconSize: 28,
-                    color: ColorSelect.buttonColorText,
-                  ),
-                ],
+              Container(
+                padding: EdgeInsets.all(6),
+                margin: EdgeInsets.only(top: 20, bottom: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: ColorSelect.buttonColor),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.add_rounded,
+                          size: 26,
+                          color: ColorSelect.buttonColorText,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text('Informasi & Promo Terbaru',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                                color: ColorSelect.buttonColorText)),
+                      ],
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.chevron_right),
+                      iconSize: 28,
+                      color: ColorSelect.buttonColorText,
+                    ),
+                  ],
+                ),
               ),
-            ),
-
-            Container(
-              padding: EdgeInsets.all(6),
-              margin: EdgeInsets.only(top: 20, bottom: 10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18),
-                  color: ColorSelect.buttonColor),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.add_rounded,
-                        semanticLabel: "aaa",
-                        size: 26,
-                        color: ColorSelect.buttonColorText,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text('Informasi & Promo Terbaru',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: ColorSelect.buttonColorText)),
-                    ],
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.chevron_right),
-                    iconSize: 28,
-                    color: ColorSelect.buttonColorText,
-                  ),
-                ],
-              ),
-            ),
-          ],
+              // Nav Button End
+            ],
+          ),
         ),
       ),
     );

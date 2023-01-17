@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:manfa_apps/colors/colors.dart';
-import 'package:manfa_apps/main.dart';
+import 'package:manfa_apps/code/colors.dart';
+
+import 'package:manfa_apps/code/titleBar.dart';
 
 void main() {
   runApp(tagihan());
@@ -80,25 +81,85 @@ class tagihan extends StatelessWidget {
               ),
             ),
 
-            Column(
-              children: [
-                Padding(padding: EdgeInsets.only(bottom: 10)),
+            Container(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(8)),
+              child: Column(
+                children: [
+                  // title
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      tagihanListTitle(text: "Nomor Order"),
+                      tagihanListTitle(text: "Paket"),
+                      tagihanListTitle(text: "Periode"),
+                      tagihanListTitle(text: "Status"),
+                    ],
+                  ),
+                  // title end
 
-                // title
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    tagihanListTitle(
-                        text: "Nomor Order", text2: "BBGLINK245200006"),
-                    tagihanListTitle(text: "Paket", text2: "Business"),
-                    tagihanListTitle(text: "Periode", text2: "1 Bulan"),
-                    tagihanListTitle(
-                        text: "Status", text2: "EXPIRED\n06/11/2022"),
-                  ],
-                ),
+                  // list
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "EXPIRED\n22/11/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "SUCCESS\n05/10/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "EXPIRED\n22/11/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "SUCCESS\n05/10/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "EXPIRED\n22/11/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "SUCCESS\n05/10/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "EXPIRED\n22/11/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "SUCCESS\n05/10/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "EXPIRED\n22/11/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "SUCCESS\n05/10/2022"),
+                  // tagihanList(
+                  //     no_order: "BBGLINK245200006",
+                  //     paket: "Bussiness",
+                  //     periode: "1 Bulan",
+                  //     status: "EXPIRED\n22/11/2022"),
 
-                // list
-              ],
+                ],
+              ),
             ),
             // Tagihan List end
           ],
@@ -108,15 +169,49 @@ class tagihan extends StatelessWidget {
   }
 }
 
+class tagihanList extends StatelessWidget {
+  const tagihanList({
+    Key? key,
+    required this.no_order,
+    required this.paket,
+    required this.periode,
+    required this.status,
+  }) : super(key: key);
+
+  final String no_order;
+  final String paket;
+  final String periode;
+  final String status;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(no_order,
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
+          Text(paket,
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
+          Text(periode,
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12)),
+          Text(status,
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 9),
+              textAlign: TextAlign.center),
+        ],
+      ),
+    );
+  }
+}
+
 class tagihanListTitle extends StatelessWidget {
   const tagihanListTitle({
     Key? key,
     required this.text,
-    required this.text2,
   }) : super(key: key);
 
   final String text;
-  final String text2;
 
   @override
   Widget build(BuildContext context) {
@@ -129,11 +224,6 @@ class tagihanListTitle extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Text(
-          text2,
-          style: TextStyle(fontSize: 12),
-          textAlign: TextAlign.center,
-        )
       ],
     );
   }

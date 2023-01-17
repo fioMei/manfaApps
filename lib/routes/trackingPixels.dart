@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:manfa_apps/colors/colors.dart';
-
-import '../main.dart';
+import 'package:manfa_apps/code/colors.dart';
+import 'package:manfa_apps/code/textField.dart';
+import 'package:manfa_apps/code/titleBar.dart';
+import 'package:manfa_apps/code/titleText.dart';
 
 void main() {
   runApp(trackingPixels());
@@ -29,22 +30,13 @@ class trackingPixels extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // facebook
-                  Text(
-                    "Facebook Pixels",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
-                  textField(text: "Masukkan Facebook Pixels"),
-                  SizedBox(height: 20),
+                  titleText("Facebook Pixels"),
+                  textField("Masukkan Facebook Pixels"),
 
                   // google
-                  Text(
-                    "Google Analytics ID",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 8),
+                  titleText("Google Analytics ID"),
                   textField(
-                    text: "Masukkan Google Analytics ID",
+                    "Masukkan Google Analytics ID",
                   ),
                 ],
               ),

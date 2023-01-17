@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manfa_apps/main.dart';
+import 'package:manfa_apps/code/titleBar.dart';
 
 void main() {
   runApp(emailDatabase());
