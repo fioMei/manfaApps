@@ -1,6 +1,7 @@
-import 'package:manfa_apps/main.dart';
+import 'package:manfa_apps/code/itemKategori.dart';
+import 'package:manfa_apps/code/snackBar.dart';
 import 'package:flutter/material.dart';
-import 'package:manfa_apps/colors/colors.dart';
+import 'package:manfa_apps/code/colors.dart';
 import 'package:manfa_apps/routes/trackingPixels.dart';
 import 'package:manfa_apps/routes/emailDatabase.dart';
 import 'package:manfa_apps/routes/tagihan.dart';
@@ -231,12 +232,12 @@ class _BerbagiLinkState extends State<berbagiLink>
                                 size: 34,
                               ),
                               tap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: ((context) => tes()),
-                                  ),
-                                );
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: ((context) => tes()),
+                                //   ),
+                                // );
                                 print("button 1 clicked");
                               },
                             ),
@@ -444,47 +445,6 @@ class _BerbagiLinkState extends State<berbagiLink>
           ],
         ),
       ),
-    );
-  }
-}
-
-class itemKategori extends StatelessWidget {
-  const itemKategori({
-    Key? key,
-    required this.name,
-    required this.icon,
-    required this.tap,
-  }) : super(key: key);
-
-  final String name;
-  final Icon icon;
-  final Function tap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        InkWell(
-          borderRadius: BorderRadius.circular(12),
-          onTap: () {
-            tap();
-          },
-          child: Ink(
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
-                color: ColorSelect.secondaryColor,
-                borderRadius: BorderRadius.circular(12)),
-            child: icon,
-          ),
-        ),
-        SizedBox(height: 5),
-        Text(
-          name,
-          style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),
-          textAlign: TextAlign.center,
-        ),
-      ],
     );
   }
 }
