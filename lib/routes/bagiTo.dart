@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:manfa_apps/code/colors.dart';
 import 'package:manfa_apps/code/expansinoSaveBtn.dart';
 import 'package:manfa_apps/code/expansionBtn.dart';
+import 'package:manfa_apps/code/listLink.dart';
 import 'package:manfa_apps/code/textField.dart';
 import 'package:manfa_apps/code/titleBar.dart';
 import 'package:manfa_apps/code/titleText.dart';
@@ -125,16 +126,7 @@ class _bagiToState extends State<bagiTo> {
                         ),
                       ],
                     ),
-                    Checkbox(
-                      checkColor: Colors.amber,
-                      fillColor: MaterialStateProperty.resolveWith(getColor),
-                      value: isChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isChecked = value!;
-                        });
-                      },
-                    ),
+                    linkList("a"),
                   ],
                 ),
               ),

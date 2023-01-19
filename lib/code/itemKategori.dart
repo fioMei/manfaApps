@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 import 'package:manfa_apps/code/colors.dart';
-
+import 'package:manfa_apps/routes/tagihan.dart';
 
 class itemKategori extends StatelessWidget {
   const itemKategori({
-    Key? key,
     required this.name,
     required this.icon,
     required this.tap,
+    Key? key,
   }) : super(key: key);
 
   final String name;
-  final Icon icon;
+  final String icon;
   final Function tap;
 
   @override
@@ -25,13 +25,16 @@ class itemKategori extends StatelessWidget {
             tap();
           },
           child: Ink(
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
                 color: ColorSelect.secondaryColor,
-                borderRadius: BorderRadius.circular(12)),
-            child: icon,
-          ),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Container(
+                padding: EdgeInsets.all(18),
+                child: Image.asset("assets/${icon}"),
+              )),
         ),
         SizedBox(height: 5),
         Text(

@@ -7,8 +7,6 @@ import 'package:manfa_apps/routes/emailDatabase.dart';
 import 'package:manfa_apps/routes/tagihan.dart';
 import 'package:manfa_apps/routes/bagiTo.dart';
 
-import 'routes/tes.dart';
-
 void main() => runApp(berbagiLink());
 
 class berbagiLink extends StatefulWidget {
@@ -218,61 +216,27 @@ class _BerbagiLinkState extends State<berbagiLink>
                 children: [
                   Container(child: Center(child: Text('Dashboard'))),
                   Column(
-                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             itemKategori(
-                              name: "Ubah Tampilan",
-                              icon: Icon(
-                                Icons.brush,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
-                              tap: () {
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: ((context) => tes()),
-                                //   ),
-                                // );
-                                print("button 1 clicked");
-                              },
-                            ),
+                                name: "Ubah Tampilan",
+                                icon: "icon1.png",
+                                tap: () {}),
                             itemKategori(
-                              name: "Analisis Link",
-                              icon: Icon(
-                                Icons.insert_chart,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
-                              tap: () {
-                                print("button 2 clicked");
-                              },
-                            ),
+                                name: "Analisis Link",
+                                icon: "icon2.png",
+                                tap: () {}),
                             itemKategori(
-                              name: "Pratinjau",
-                              icon: Icon(
-                                Icons.remove_red_eye_outlined,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
-                              tap: () {
-                                print("button 3 clicked");
-                              },
-                            ),
+                                name: "Pratinjau",
+                                icon: "icon3.png",
+                                tap: () {}),
                             itemKategori(
                               name: "Tema",
-                              icon: Icon(
-                                Icons.palette,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
-                              tap: () {
-                                print("button 4 clicked");
-                              },
+                              icon: "icon4.png",
+                              tap: () {},
                             )
                           ],
                         ),
@@ -283,51 +247,36 @@ class _BerbagiLinkState extends State<berbagiLink>
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             itemKategori(
-                                name: "Tracking Pixels",
-                                icon: Icon(
-                                  Icons.manage_search,
-                                  color: ColorSelect.secondaryColorText,
-                                  size: 34,
-                                ),
-                                tap: () {
-                                  print("button 5 clicked");
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return trackingPixels();
-                                      },
-                                    ),
-                                  );
-                                }),
-                            itemKategori(
-                              name: "Email Database",
-                              icon: Icon(
-                                Icons.quick_contacts_mail,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
+                              name: "Tracking Pixels",
+                              icon: "icon5.png",
                               tap: () {
-                                print("button 6 clicked");
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) {
-                                      return emailDatabase();
+                                      return trackingPixels();
                                     },
                                   ),
                                 );
                               },
                             ),
                             itemKategori(
+                                name: "Email Database",
+                                icon: "icon6.png",
+                                tap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return emailDatabase();
+                                      },
+                                    ),
+                                  );
+                                }),
+                            itemKategori(
                               name: "Tagihan",
-                              icon: Icon(
-                                Icons.feed,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
+                              icon: "icon7.png",
                               tap: () {
-                                print("button 7 clicked");
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -338,42 +287,19 @@ class _BerbagiLinkState extends State<berbagiLink>
                                 );
                               },
                             ),
-                            Column(
-                              children: [
-                                InkWell(
-                                  borderRadius: BorderRadius.circular(12),
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) {
-                                          return bagiTo();
-                                        },
-                                      ),
-                                    );
-                                  },
-                                  child: Ink(
-                                      width: 70,
-                                      height: 70,
-                                      decoration: BoxDecoration(
-                                        color: ColorSelect.secondaryColor,
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                      child: Container(
-                                        padding: EdgeInsets.all(16),
-                                        child: Image.asset(
-                                            "assets/berbagiLink.png"),
-                                      )),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  "Bagi.to",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w500),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
+                            itemKategori(
+                              name: "Bagi.to",
+                              icon: "icon8.png",
+                              tap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return bagiTo();
+                                    },
+                                  ),
+                                );
+                              },
                             ),
                           ],
                         ),
@@ -385,49 +311,21 @@ class _BerbagiLinkState extends State<berbagiLink>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             itemKategori(
-                              name: "Manajemen\nUser",
-                              icon: Icon(
-                                Icons.settings_accessibility,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
-                              tap: () {
-                                print("button 9 clicked");
-                              },
-                            ),
+                                name: "Manajemen User",
+                                icon: "icon9.png",
+                                tap: () {}),
                             itemKategori(
-                              name: "Event Online",
-                              icon: Icon(
-                                Icons.newspaper,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
-                              tap: () {
-                                print("button 10 clicked");
-                              },
-                            ),
+                                name: "Event Online",
+                                icon: "icon10.png",
+                                tap: () {}),
                             itemKategori(
-                              name: "Profile",
-                              icon: Icon(
-                                Icons.person,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
-                              tap: () {
-                                print("button 11 clicked");
-                              },
-                            ),
+                                name: "Profile",
+                                icon: "icon11.png",
+                                tap: () {}),
                             itemKategori(
-                              name: "Integrasi Pihak\nketiga",
-                              icon: Icon(
-                                Icons.groups,
-                                color: ColorSelect.secondaryColorText,
-                                size: 34,
-                              ),
-                              tap: () {
-                                print("butto12 cliked");
-                              },
-                            ),
+                                name: "Integrasi\nPihak Ketiga",
+                                icon: "icon12.png",
+                                tap: () {}),
                           ],
                         ),
                       ),

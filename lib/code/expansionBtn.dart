@@ -12,7 +12,6 @@ class expansionBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: EdgeInsets.all(4),
       margin: EdgeInsets.only(top: 20, bottom: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
