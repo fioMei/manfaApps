@@ -1,11 +1,12 @@
-import 'package:manfa_apps/code/itemKategori.dart';
-import 'package:manfa_apps/code/snackBar.dart';
+import 'package:manfa_apps/widgets/itemKategori.dart';
+import 'package:manfa_apps/widgets/snackBar.dart';
 import 'package:flutter/material.dart';
-import 'package:manfa_apps/code/colors.dart';
-import 'package:manfa_apps/routes/trackingPixels.dart';
-import 'package:manfa_apps/routes/emailDatabase.dart';
-import 'package:manfa_apps/routes/tagihan.dart';
-import 'package:manfa_apps/routes/bagiTo.dart';
+import 'package:manfa_apps/widgets/colors.dart';
+import 'package:manfa_apps/pages/tes.dart';
+import 'package:manfa_apps/pages/trackingPixels.dart';
+import 'package:manfa_apps/pages/emailDatabase.dart';
+import 'package:manfa_apps/pages/tagihan.dart';
+import 'package:manfa_apps/pages/bagiTo.dart';
 
 void main() => runApp(berbagiLink());
 
@@ -224,7 +225,16 @@ class _BerbagiLinkState extends State<berbagiLink>
                             itemKategori(
                                 name: "Ubah Tampilan",
                                 icon: "icon1.png",
-                                tap: () {}),
+                                tap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return tes();
+                                      },
+                                    ),
+                                  );
+                                }),
                             itemKategori(
                                 name: "Analisis Link",
                                 icon: "icon2.png",
