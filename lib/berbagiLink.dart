@@ -2,15 +2,16 @@ import 'package:manfa_apps/widgets/itemKategori.dart';
 import 'package:manfa_apps/widgets/snackBar.dart';
 import 'package:flutter/material.dart';
 import 'package:manfa_apps/widgets/colors.dart';
-import 'package:manfa_apps/pages/tes.dart';
-import 'package:manfa_apps/pages/trackingPixels.dart';
-import 'package:manfa_apps/pages/emailDatabase.dart';
-import 'package:manfa_apps/pages/tagihan.dart';
-import 'package:manfa_apps/pages/bagiTo.dart';
+import 'package:manfa_apps/routes/tes.dart';
+import 'package:manfa_apps/routes/trackingPixels.dart';
+import 'package:manfa_apps/routes/emailDatabase.dart';
+import 'package:manfa_apps/routes/tagihan.dart';
+import 'package:manfa_apps/routes/bagiTo.dart';
 
 void main() => runApp(berbagiLink());
 
 class berbagiLink extends StatefulWidget {
+  static const nameRoute = '/berbagiLink';
   IconData? icon;
 
   berbagiLink({Key? key}) : super(key: key);
@@ -62,9 +63,12 @@ class _BerbagiLinkState extends State<berbagiLink>
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(left: 8, right: 12),
-                      child: Icon(Icons.handshake_outlined),
-                    ),
+                        padding: EdgeInsets.only(left: 8, right: 12),
+                        child: Image(
+                          image: AssetImage("assets/icon8.png"),
+                          height: 28,
+                          width: 28,
+                        )),
                     Text(
                       "Berbagi Link",
                       style:
@@ -260,55 +264,30 @@ class _BerbagiLinkState extends State<berbagiLink>
                               name: "Tracking Pixels",
                               icon: "icon5.png",
                               tap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return trackingPixels();
-                                    },
-                                  ),
-                                );
+                                Navigator.of(context)
+                                    .pushNamed('/trackingPixels');
                               },
                             ),
                             itemKategori(
-                                name: "Email Database",
-                                icon: "icon6.png",
-                                tap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return emailDatabase();
-                                      },
-                                    ),
-                                  );
-                                }),
+                              name: "Email Database",
+                              icon: "icon6.png",
+                              tap: () {
+                                Navigator.of(context)
+                                    .pushNamed('/emailDatabase');
+                              },
+                            ),
                             itemKategori(
                               name: "Tagihan",
                               icon: "icon7.png",
                               tap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return tagihan();
-                                    },
-                                  ),
-                                );
+                                Navigator.of(context).pushNamed('/tagihan');
                               },
                             ),
                             itemKategori(
                               name: "Bagi.to",
                               icon: "icon8.png",
                               tap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return bagiTo();
-                                    },
-                                  ),
-                                );
+                                Navigator.of(context).pushNamed('/bagiTo');
                               },
                             ),
                           ],

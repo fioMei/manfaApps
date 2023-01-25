@@ -9,7 +9,7 @@ class titleText extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 8, top: 16),
       child: Text(
         text,
-        style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        style: TextStyle(fontWeight: FontWeight.bold),
       ),
     );
   }
