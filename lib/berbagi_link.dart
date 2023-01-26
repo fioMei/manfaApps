@@ -1,20 +1,16 @@
-import 'package:manfa_apps/widgets/itemKategori.dart';
-import 'package:manfa_apps/widgets/snackBar.dart';
+import 'package:manfa_apps/widgets/item_kategori.dart';
+import 'package:manfa_apps/widgets/snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:manfa_apps/widgets/colors.dart';
 import 'package:manfa_apps/routes/tes.dart';
-import 'package:manfa_apps/routes/trackingPixels.dart';
-import 'package:manfa_apps/routes/emailDatabase.dart';
-import 'package:manfa_apps/routes/tagihan.dart';
-import 'package:manfa_apps/routes/bagiTo.dart';
 
 void main() => runApp(berbagiLink());
 
 class berbagiLink extends StatefulWidget {
-  static const nameRoute = '/berbagiLink';
   IconData? icon;
 
   berbagiLink({Key? key}) : super(key: key);
+  static const nameRoute = '/berbagiLink';
 
   @override
   State<berbagiLink> createState() => _BerbagiLinkState();
@@ -81,6 +77,7 @@ class _BerbagiLinkState extends State<berbagiLink>
                   height: 40,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(40 / 2),
+                    color: Colors.grey[200],
                     image: DecorationImage(
                       image: AssetImage("assets/photoprofile.jpg"),
                     ),
