@@ -65,67 +65,50 @@ class _analisisState extends State<analisis> {
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    child: Center(
-                        child: OutlinedButton(
-                      onPressed: () {
-                        showDatePicker(
-                                context: context,
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime(2016),
-                                lastDate: DateTime(2025),
-                                initialEntryMode: DatePickerEntryMode.input)
-                            .then((value) {
-                          if (value != null)
-                            setState(() {
-                              selectDate_hingga = value;
-                            });
-                        });
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                            "${DateFormat.yMd().format(selectDate_hingga)}"),
-                      ),
-                    )),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: ColorSelect.disableColor,
-                      ),
-                      borderRadius: BorderRadius.circular(12),
+                  child: OutlinedButton(
+                    onPressed: () {
+                      showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime(2016),
+                              lastDate: DateTime(2025),
+                              initialEntryMode: DatePickerEntryMode.input)
+                          .then((value) {
+                        if (value != null)
+                          setState(() {
+                            selectDate_hingga = value;
+                          });
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child:
+                          Text("${DateFormat.yMd().format(selectDate_hingga)}"),
                     ),
-                    height: 50,
                   ),
                 ),
                 SizedBox(width: 20),
                 Expanded(
-                  child: Container(
-                    child: Center(
-                        child: OutlinedButton(
-                      onPressed: () {
-                        showDatePicker(
-                                context: context,
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime(2016),
-                                lastDate: DateTime(2025),
-                                initialEntryMode: DatePickerEntryMode.input)
-                            .then((value) {
-                          if (value != null)
-                            setState(() {
-                              selectDate_dari = value;
-                            });
-                        });
-                      },
+                  child: OutlinedButton(
+                    onPressed: () {
+                      showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime(2016),
+                              lastDate: DateTime(2025),
+                              initialEntryMode: DatePickerEntryMode.input)
+                          .then((value) {
+                        if (value != null)
+                          setState(() {
+                            selectDate_dari = value;
+                          });
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
                       child:
                           Text("${DateFormat.yMd().format(selectDate_dari)}"),
-                    )),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: ColorSelect.disableColor,
-                      ),
-                      borderRadius: BorderRadius.circular(12),
                     ),
-                    height: 50,
                   ),
                 ),
               ],

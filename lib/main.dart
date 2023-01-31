@@ -17,7 +17,7 @@ class ManfaApps extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: "Ubuntu"),
+      theme: ThemeData(fontFamily: "FlowCircular"),
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         body: berbagiLink(),
