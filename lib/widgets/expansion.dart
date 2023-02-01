@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:manfa_apps/widgets/text_field.dart';
-
 import 'package:manfa_apps/widgets/colors.dart';
 
 class expansionBtn extends StatelessWidget {
@@ -12,47 +10,53 @@ class expansionBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20, bottom: 10),
-      decoration: BoxDecoration(
+      // color: ColorSelect.buttonColor,
+      child: Card(
+        elevation: 0,
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
-          color: ColorSelect.buttonColor),
-      child: ExpansionTile(
-        collapsedIconColor: ColorSelect.buttonColorText,
-        iconColor: ColorSelect.buttonColorText,
-        title: Row(
+        ),
+        color: ColorSelect.buttonColor,
+        child: ExpansionTile(
+          collapsedIconColor: ColorSelect.buttonColorText,
+          iconColor: ColorSelect.buttonColorText,
+          title: Row(
+            children: [
+              Icon(
+                icon,
+                color: ColorSelect.buttonColorText,
+                size: 25,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                title,
+                style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: ColorSelect.buttonColorText),
+              ),
+            ],
+          ),
           children: [
-            Icon(
-              icon,
-              color: ColorSelect.buttonColorText,
-              size: 25,
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  // borderRadius: BorderRadius.circular(12),
+                  // Border
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(12)
+                  // Border End
+                  ),
+              child: Container(
+                padding: EdgeInsets.all(12),
+                child: widget,
+              ),
             ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              title,
-              style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: ColorSelect.buttonColorText),
-            ),
+            SizedBox(height: 2)
           ],
         ),
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.white,
-                // borderRadius: BorderRadius.circular(12),
-                // Border
-                border: Border.all(),
-                borderRadius: BorderRadius.circular(12)
-                // Border End
-                ),
-            child: Container(
-              padding: EdgeInsets.all(12),
-              child: widget,
-            ),
-          ),
-        ],
       ),
     );
   }

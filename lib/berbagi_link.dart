@@ -2,10 +2,10 @@ import 'package:manfa_apps/widgets/item_kategori.dart';
 import 'package:manfa_apps/widgets/snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:manfa_apps/widgets/colors.dart';
-import 'package:manfa_apps/routes/tes.dart';
 
 void main() => runApp(berbagiLink());
 
+// ignore: must_be_immutable
 class berbagiLink extends StatefulWidget {
   IconData? icon;
 
@@ -226,16 +226,7 @@ class _BerbagiLinkState extends State<berbagiLink>
                             itemKategori(
                                 name: "Ubah Tampilan",
                                 icon: "icon1.png",
-                                tap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return tes();
-                                      },
-                                    ),
-                                  );
-                                }),
+                                tap: () {}),
                             itemKategori(
                                 name: "Analisis Link",
                                 icon: "icon2.png",

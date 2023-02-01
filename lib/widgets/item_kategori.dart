@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:manfa_apps/widgets/colors.dart';
-import 'package:manfa_apps/routes/tagihan.dart';
 
 class itemKategori extends StatelessWidget {
   const itemKategori({

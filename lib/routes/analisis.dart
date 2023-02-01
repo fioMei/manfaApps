@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:manfa_apps/widgets/colors.dart';
-import 'package:manfa_apps/widgets/line.dart';
 import 'package:manfa_apps/widgets/title_bar.dart';
 import 'package:manfa_apps/widgets/title_text.dart';
 import 'package:intl/intl.dart';
@@ -171,15 +170,15 @@ class _analisisState extends State<analisis> {
                         ),
                       ],
                     ),
-                    line(),
+                    Divider(),
                     total_klik(),
-                    line(),
+                    Divider(),
                     total_klik(),
-                    line(),
+                    Divider(),
                     total_klik(),
-                    line(),
+                    Divider(),
                     total_klik(),
-                    line(),
+                    Divider(),
                     total_klik(),
                   ],
                 ),
