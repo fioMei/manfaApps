@@ -213,6 +213,7 @@ class _BerbagiLinkState extends State<berbagiLink>
               controller: _tabController,
               indicatorSize: TabBarIndicatorSize.tab,
             ),
+
             Expanded(
               child: TabBarView(
                 children: [
@@ -243,8 +244,9 @@ class _BerbagiLinkState extends State<berbagiLink>
                           ],
                         ),
                       ),
+                      SizedBox(height: 20),
                       Container(
-                        margin: EdgeInsets.only(top: 20),
+                        // margin: EdgeInsets.only(top: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -281,8 +283,8 @@ class _BerbagiLinkState extends State<berbagiLink>
                           ],
                         ),
                       ),
+                      SizedBox(height: 20),
                       Container(
-                        margin: EdgeInsets.only(top: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           crossAxisAlignment: CrossAxisAlignment.start,
