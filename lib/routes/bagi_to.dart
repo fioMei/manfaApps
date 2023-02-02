@@ -97,7 +97,7 @@ class _bagiToState extends State<bagiTo> {
                   )),
               // Expansion Button End
 
-              SizedBox(height: 16),
+              SizedBox(height: 20),
 
               // Expansion Button
               expansionBtn(
@@ -156,9 +156,10 @@ class _bagiToState extends State<bagiTo> {
               ),
               // Expansion Button End
 
+              SizedBox(height: 24),
+
               Container(
                 padding: EdgeInsets.all(6),
-                margin: EdgeInsets.only(top: 20, bottom: 10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: ColorSelect.buttonColor),
@@ -192,9 +193,10 @@ class _bagiToState extends State<bagiTo> {
                 ),
               ),
 
+              SizedBox(height: 26),
+
               Container(
                 padding: EdgeInsets.all(6),
-                margin: EdgeInsets.only(top: 20, bottom: 10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: ColorSelect.buttonColor),
