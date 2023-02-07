@@ -11,7 +11,6 @@ class linkList extends StatefulWidget {
 class _linkListState extends State<linkList> {
   bool? isChecked = false;
 
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -35,25 +34,36 @@ class _linkListState extends State<linkList> {
         ),
         Row(
           children: [
-            Image(
-              image: AssetImage("assets/copy.png"),
-              width: 26,
-              height: 26,
-              filterQuality: FilterQuality.high,
+            InkWell(
+              onTap: () => print("button pressed"),
+              child: Ink(
+                child: Image(
+                  image: AssetImage("assets/copy.png"),
+                  width: 26,
+                  height: 26,
+                  filterQuality: FilterQuality.high,
+                ),
+              ),
             ),
             SizedBox(width: 10),
-            Image(
-              image: AssetImage("assets/edit.png"),
-              width: 24,
-              height: 24,
-              filterQuality: FilterQuality.high,
+            InkWell(
+              onTap: () => print("button pressed"),
+              child: Image(
+                image: AssetImage("assets/edit.png"),
+                width: 24,
+                height: 24,
+                filterQuality: FilterQuality.high,
+              ),
             ),
             SizedBox(width: 10),
-            Image(
-              image: AssetImage("assets/share.png"),
-              width: 26,
-              height: 26,
-              filterQuality: FilterQuality.high,
+            InkWell(
+              onTap: () => print("button pressed"),
+              child: Image(
+                image: AssetImage("assets/share.png"),
+                width: 26,
+                height: 26,
+                filterQuality: FilterQuality.high,
+              ),
             ),
           ],
         ),
