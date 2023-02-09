@@ -21,6 +21,7 @@ class bagiTo extends StatefulWidget {
 }
 
 class _bagiToState extends State<bagiTo> {
+  bool? isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,59 +42,62 @@ class _bagiToState extends State<bagiTo> {
               expansionBtn(
                   "Buat Link Baru",
                   Icons.add_link,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      titleText("Judul"),
-                      textField("Masukkan Judul Link (contoh: Google Maps)"),
-                      titleText("Link Asli"),
-                      textField("Masukkan Link yang ingin disingkat"),
-                      titleText("Generate Link (otomatis)"),
-                      Container(
-                        padding: EdgeInsets.all(4),
-                        margin: EdgeInsets.only(bottom: 12),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18),
-                            color: ColorSelect.primaryColor),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Text(
-                                "bagi.to/Judul",
-                                style: TextStyle(
-                                    fontStyle: FontStyle.italic,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
-                                    color: ColorSelect.primaryColorText),
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        titleText("Judul"),
+                        textField("Masukkan Judul Link (contoh: Google Maps)"),
+                        titleText("Link Asli"),
+                        textField("Masukkan Link yang ingin disingkat"),
+                        titleText("Generate Link (otomatis)"),
+                        Container(
+                          padding: EdgeInsets.all(4),
+                          margin: EdgeInsets.only(bottom: 12),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18),
+                              color: ColorSelect.primaryColor),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Text(
+                                  "bagi.to/Judul",
+                                  style: TextStyle(
+                                      fontStyle: FontStyle.italic,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: ColorSelect.primaryColorText),
+                                ),
                               ),
-                            ),
-                            Row(
-                              children: [
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.file_copy),
-                                  color: ColorSelect.primaryColorText,
-                                ),
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.share),
-                                  color: ColorSelect.primaryColorText,
-                                ),
-                              ],
-                            ),
-                          ],
+                              Row(
+                                children: [
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(Icons.file_copy),
+                                    color: ColorSelect.primaryColorText,
+                                  ),
+                                  IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(Icons.share),
+                                    color: ColorSelect.primaryColorText,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          expansionSaveBtn("Batal", false),
-                          expansionSaveBtn("Simpan", true),
-                        ],
-                      )
-                    ],
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            expansionSaveBtn("Batal", false),
+                            expansionSaveBtn("Simpan", true),
+                          ],
+                        )
+                      ],
+                    ),
                   )),
               // Expansion Button End
 
@@ -105,23 +109,32 @@ class _bagiToState extends State<bagiTo> {
                 Icons.list,
                 Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Pilih Semua"),
-                        Text(
-                          "Hapus Link",
-                          style: TextStyle(color: ColorSelect.disableColor),
-                        ),
-                      ],
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 8.0, right: 12, left: 12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Pilih Semua",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Hapus Link",
+                            style: TextStyle(color: ColorSelect.disableColor),
+                          ),
+                        ],
+                      ),
                     ),
                     Divider(),
-                    linkList("ABC1"),
-                    linkList("ABC1"),
-                    linkList("ABC1"),
-                    linkList("ABC1"),
-                    linkList("ABC1"),
-                    linkList("ABC1"),
+                    // for (int i = 0; i < 7; i++)
+                    linkList("text"),
+                    linkList("text"),
+                    linkList("text"),
+                    linkList("text"),
+                    linkList("text"),
+                    linkList("text"),
+
                     Divider(),
                     SizedBox(height: 4),
                     Row(
@@ -149,20 +162,26 @@ class _bagiToState extends State<bagiTo> {
                               elevation: 0,
                               backgroundColor: ColorSelect.buttonColorText),
                         ),
+                        SizedBox(
+                          width: 8,
+                        )
                       ],
                     ),
+                    SizedBox(height: 10)
                   ],
                 ),
               ),
               // Expansion Button End
 
-              SizedBox(height: 24),
+              SizedBox(height: 12),
+              Divider(),
+              SizedBox(height: 12),
 
               Container(
                 padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
-                    color: ColorSelect.buttonColor),
+                    color: ColorSelect.primaryColor),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -171,7 +190,7 @@ class _bagiToState extends State<bagiTo> {
                         Icon(
                           Icons.add_rounded,
                           size: 26,
-                          color: ColorSelect.buttonColorText,
+                          color: ColorSelect.primaryColorText,
                         ),
                         SizedBox(
                           width: 10,
@@ -180,14 +199,14 @@ class _bagiToState extends State<bagiTo> {
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
-                                color: ColorSelect.buttonColorText)),
+                                color: ColorSelect.primaryColorText)),
                       ],
                     ),
                     IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.chevron_right),
                       iconSize: 28,
-                      color: ColorSelect.buttonColorText,
+                      color: ColorSelect.primaryColorText,
                     ),
                   ],
                 ),
@@ -199,7 +218,7 @@ class _bagiToState extends State<bagiTo> {
                 padding: EdgeInsets.all(6),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
-                    color: ColorSelect.buttonColor),
+                    color: ColorSelect.primaryColor),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -208,7 +227,7 @@ class _bagiToState extends State<bagiTo> {
                         Icon(
                           Icons.add_rounded,
                           size: 26,
-                          color: ColorSelect.buttonColorText,
+                          color: ColorSelect.primaryColorText,
                         ),
                         SizedBox(
                           width: 10,
@@ -217,14 +236,14 @@ class _bagiToState extends State<bagiTo> {
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
-                                color: ColorSelect.buttonColorText)),
+                                color: ColorSelect.primaryColorText)),
                       ],
                     ),
                     IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.chevron_right),
                       iconSize: 28,
-                      color: ColorSelect.buttonColorText,
+                      color: ColorSelect.primaryColorText,
                     ),
                   ],
                 ),

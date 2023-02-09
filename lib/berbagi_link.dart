@@ -161,7 +161,7 @@ class _BerbagiLinkState extends State<berbagiLink>
                   Container(
                     padding: EdgeInsets.only(left: 20),
                     child: Text(
-                      "berbagi.link/fio",
+                      "berbagi.link/nama",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 18,
@@ -191,17 +191,16 @@ class _BerbagiLinkState extends State<berbagiLink>
 
             TabBar(
               padding: EdgeInsets.only(top: 20, bottom: 20),
-              // isScrollable: true,
               unselectedLabelColor: ColorSelect.disableColor,
               unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
               labelColor: Colors.white,
-              // indicatorWeight: 0,
               indicator: BoxDecoration(
                 color: ColorSelect.buttonColorText,
                 borderRadius: BorderRadius.circular(64),
               ),
-              overlayColor:
-                  MaterialStateProperty.all(Color.fromARGB(0, 0, 0, 0)),
+              overlayColor: MaterialStateProperty.all(
+                Color.fromARGB(0, 0, 0, 0),
+              ),
               tabs: [
                 Tab(
                   text: 'Dashboard',
@@ -239,7 +238,9 @@ class _BerbagiLinkState extends State<berbagiLink>
                             itemKategori(
                               name: "Tema",
                               icon: "icon4.png",
-                              tap: () {},
+                              tap: () {
+                                Navigator.of(context).pushNamed('/tema');
+                              },
                             )
                           ],
                         ),

@@ -15,7 +15,14 @@ class analisis extends StatefulWidget {
 class _analisisState extends State<analisis> {
   DateTime selectDate_dari = DateTime.now();
   DateTime selectDate_hingga = DateTime.now();
-
+  String dropdownvalue = 'Item 1';
+  var items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,6 +120,39 @@ class _analisisState extends State<analisis> {
               ],
             ),
             titleText("Filter"),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: ColorSelect.disableColor),
+                        borderRadius: BorderRadius.circular(12)),
+                    child: DropdownButton(
+                      isExpanded: true,
+                      value: dropdownvalue,
+                      icon: Icon(Icons.keyboard_arrow_down),
+                      items: items.map((String items) {
+                        return DropdownMenuItem(
+                          value: items,
+                          child: Text(
+                            items,
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        );
+                      }).toList(),
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          dropdownvalue = newValue!;
+                        });
+                      },
+                      underline: SizedBox(),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Container(
               padding: EdgeInsets.all(16),
               margin: EdgeInsets.only(top: 20),
@@ -121,12 +161,12 @@ class _analisisState extends State<analisis> {
                     topLeft: Radius.circular(32),
                     topRight: Radius.circular(32),
                   ),
-                  color: ColorSelect.buttonColor),
+                  color: ColorSelect.primaryColor),
               child: Row(
                 children: [
                   Icon(
                     Icons.group,
-                    color: ColorSelect.buttonColorText,
+                    color: ColorSelect.primaryColorText,
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 20),
@@ -135,7 +175,7 @@ class _analisisState extends State<analisis> {
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 18,
-                          color: ColorSelect.buttonColorText),
+                          color: ColorSelect.primaryColorText),
                     ),
                   ),
                 ],
@@ -161,12 +201,15 @@ class _analisisState extends State<analisis> {
                         Text(
                           "Jumlah Total Klik Link",
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 18),
+                              fontWeight: FontWeight.w500, fontSize: 16),
                         ),
-                        Text(
-                          "68",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 24),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 6.0),
+                          child: Text(
+                            "68",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 24),
+                          ),
                         ),
                       ],
                     ),
@@ -214,9 +257,12 @@ class total_klik extends StatelessWidget {
             ),
           ],
         ),
-        Text(
-          "17",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: Text(
+            "17",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
         ),
       ],
     );

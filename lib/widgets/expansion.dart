@@ -14,6 +14,7 @@ class expansionBtn extends StatelessWidget {
           color: ColorSelect.buttonColor,
           borderRadius: BorderRadius.circular(18)),
       child: ExpansionTile(
+        
         collapsedIconColor: ColorSelect.buttonColorText,
         iconColor: ColorSelect.buttonColorText,
         title: Row(
@@ -44,10 +45,7 @@ class expansionBtn extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12)
                 // Border End
                 ),
-            child: Container(
-              padding: EdgeInsets.all(12),
-              child: widget,
-            ),
+            child: widget,
           ),
         ],
       ),

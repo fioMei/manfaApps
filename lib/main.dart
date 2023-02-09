@@ -4,6 +4,7 @@ import 'package:manfa_apps/routes/analisis.dart';
 import 'package:manfa_apps/routes/bagi_to.dart';
 import 'package:manfa_apps/routes/email_database.dart';
 import 'package:manfa_apps/routes/tagihan.dart';
+import 'package:manfa_apps/routes/tema.dart';
 import 'package:manfa_apps/routes/tracking_pixels.dart';
 
 void main() {
@@ -29,6 +30,7 @@ class ManfaApps extends StatelessWidget {
         tagihan.nameRoute: (context) => tagihan(),
         bagiTo.nameRoute: (context) => bagiTo(),
         analisis.nameRoute: (context) => analisis(),
+        tema.nameRoute: (context) => tema(),
       },
     );
   }
