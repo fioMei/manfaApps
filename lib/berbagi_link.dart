@@ -189,28 +189,36 @@ class _BerbagiLinkState extends State<berbagiLink>
             ),
             // Link end
 
-            TabBar(
-              padding: EdgeInsets.only(top: 20, bottom: 20),
-              unselectedLabelColor: ColorSelect.disableColor,
-              unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
-              labelColor: Colors.white,
-              indicator: BoxDecoration(
-                color: ColorSelect.buttonColorText,
+            Container(
+              margin: EdgeInsets.only(top: 20, bottom: 20),
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(64),
-              ),
-              overlayColor: MaterialStateProperty.all(
-                Color.fromARGB(0, 0, 0, 0),
-              ),
-              tabs: [
-                Tab(
-                  text: 'Dashboard',
+                border: Border.all(
+                  width: 1,
                 ),
-                Tab(
-                  text: 'Menu Berbagi.link',
-                )
-              ],
-              controller: _tabController,
-              indicatorSize: TabBarIndicatorSize.tab,
+              ),
+              child: TabBar(
+                unselectedLabelColor: ColorSelect.disableColor,
+                unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
+                labelColor: Colors.white,
+                indicator: BoxDecoration(
+                  color: ColorSelect.buttonColorText,
+                  borderRadius: BorderRadius.circular(64),
+                ),
+                overlayColor: MaterialStateProperty.all(
+                  Color.fromARGB(0, 0, 0, 0),
+                ),
+                tabs: [
+                  Tab(
+                    text: 'Dashboard',
+                  ),
+                  Tab(
+                    text: 'Menu Berbagi.link',
+                  )
+                ],
+                controller: _tabController,
+                indicatorSize: TabBarIndicatorSize.tab,
+              ),
             ),
 
             Expanded(
