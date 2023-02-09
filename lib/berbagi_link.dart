@@ -238,9 +238,7 @@ class _BerbagiLinkState extends State<berbagiLink>
                             itemKategori(
                               name: "Tema",
                               icon: "icon4.png",
-                              tap: () {
-                                Navigator.of(context).pushNamed('/tema');
-                              },
+                              tap: () {},
                             )
                           ],
                         ),

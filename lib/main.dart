@@ -30,7 +30,6 @@ class ManfaApps extends StatelessWidget {
         tagihan.nameRoute: (context) => tagihan(),
         bagiTo.nameRoute: (context) => bagiTo(),
         analisis.nameRoute: (context) => analisis(),
-        tema.nameRoute: (context) => tema(),
       },
     );
   }
