@@ -161,7 +161,7 @@ class _BerbagiLinkState extends State<berbagiLink>
                   Container(
                     padding: EdgeInsets.only(left: 20),
                     child: Text(
-                      "berbagi.link/nama",
+                      "berbagi.link/yourname",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 18,
@@ -194,6 +194,7 @@ class _BerbagiLinkState extends State<berbagiLink>
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(64),
                 border: Border.all(
+                  color: ColorSelect.disableColor,
                   width: 1,
                 ),
               ),
